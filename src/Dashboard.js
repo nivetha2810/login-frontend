@@ -1,9 +1,26 @@
-import dashboardImage from "./images/dashboard.png";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import dashboardImage from "./images/Dashboard.png";
 
 function Dashboard() {
+
+  const navigate = useNavigate();
+
   return (
-    <div style={{textAlign:"center", marginTop:"50px"}}>
+    <div style={{ position: "relative", textAlign: "center" }}>
+
+      <button
+        onClick={() => navigate("/")}
+        style={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          padding: "10px 20px",
+          cursor: "pointer"
+        }}
+      >
+        Login
+      </button>
 
 
       <img
@@ -12,14 +29,22 @@ function Dashboard() {
   style={{
     width: "100%",
     height: "100vh",
-    objectFit: "cover"
+    objectFit: "contain"
   }}
 />
 
-      <br/><br/>
-
-      <button style={{padding:"10px 20px"}}>
-       <h2> Submit </h2>
+      <button
+        style={{
+          position: "absolute",
+          bottom: "40px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          padding: "12px 25px",
+          fontSize: "16px",
+          cursor: "pointer"
+        }}
+      >
+        Submit
       </button>
 
     </div>
